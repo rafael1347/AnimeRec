@@ -41,14 +41,16 @@ export const SignUp = () => {
         password,
       };
       console.log(newUser);
-      postData("http://localhost:5000/signup", newUser).then((data) => {
-        if (data.success) {
-          console.log("success redirecting");
-          setTimeout(() => {
-            navigate("/login");
-          }, 100);
+      postData("https://animerec-api.onrender.com/signup", newUser).then(
+        (data) => {
+          if (data.success) {
+            console.log("success redirecting");
+            setTimeout(() => {
+              navigate("/login");
+            }, 100);
+          }
         }
-      });
+      );
     }
   };
   return (

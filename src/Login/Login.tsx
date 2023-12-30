@@ -47,7 +47,10 @@ export const Login = () => {
         };
         //console.log(newUser);
 
-        const data = await postData("http://localhost:5000/login", newUser);
+        const data = await postData(
+          "https://animerec-api.onrender.com/login",
+          newUser
+        );
         const { success, message } = data;
         if (success) {
           setTimeout(() => {
