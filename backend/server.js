@@ -13,7 +13,7 @@ const port = process.env.port || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://animerec-vv3i.onrender.com", "localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

@@ -104,9 +104,11 @@ export const AnimeOverview = () => {
   }
   console.log(payload);
   const handleClick = async () => {
-    postData("http://localhost:5000/anime/add", payload).then((data) => {
-      console.log(data); // JSON data parsed by `data.json()` call
-    });
+    postData("https://animerec-api.onrender.com/anime/add", payload).then(
+      (data) => {
+        console.log(data); // JSON data parsed by `data.json()` call
+      }
+    );
   };
 
   return (

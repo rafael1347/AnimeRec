@@ -14,6 +14,7 @@ export const Watchlist = () => {
   const [animeDetails, setAnimeDetails] = useState<Anime[]>();
   const [cookies] = useCookies(["token"]);
   const navigate = useNavigate();
+  console.log(user);
 
   async function deleteData(url = "", data = {}) {
     // Default options are marked with *
@@ -29,7 +30,7 @@ export const Watchlist = () => {
     return response.json(); // parses JSON response into native JavaScript objects
   }
   const fetchAnime = async () => {
-    const response = await fetch(`http://localhost:5000/anime/`, {
+    const response = await fetch(`https://animerec-api.onrender.com/anime/`, {
       credentials: "include",
     });
     const data = (await response.json()) as Anime[];
@@ -40,19 +41,21 @@ export const Watchlist = () => {
     }
   };
   const handleDelete = (anime: Anime) => {
-    deleteData(`http://localhost:5000/anime/delete`, anime).then((data) => {
-      fetchAnime();
-      console.log(data); // JSON data parsed by `data.json()` call
-    });
+    deleteData(`https://animerec-api.onrender.com/anime/delete`, anime).then(
+      (data) => {
+        fetchAnime();
+        console.log(data); // JSON data parsed by `data.json()` call
+      }
+    );
   };
 
   useEffect(() => {
-    if (!cookies.token) {
+    if (!authenticated) {
       navigate("/login");
     } else {
       fetchAnime();
     }
-  }, [cookies.token, navigate]);
+  }, [cookies.token, navigate, user]);
   return (
     <>
       <NavBar />

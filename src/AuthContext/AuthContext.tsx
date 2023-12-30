@@ -21,28 +21,30 @@ const AuthProvider = ({ children }: Props) => {
   );
   const [user, setUser] = useState(initialValue.user);
   const [cookies] = useCookies(["token"]);
-
+  console.log("AuthContext: " + user);
+  console.log("AuthContextCookie:", cookies.token);
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
-        setAuthenticated(false);
-      } else {
-        const data = await fetch("http://localhost:5000/me", {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          cache: "default", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "include", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Credentials": "true",
-          },
-        });
-        const { user, signedIn } = await data.json();
-        setAuthenticated(signedIn);
+      const data = await fetch("https://animerec-api.onrender.com/me", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        cache: "default", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "include", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": "true",
+        },
+      });
+      const { user, signedIn } = await data.json();
+      if (signedIn) {
         setUser(user);
+        console.log("verifyCookie:" + user);
+        console.log("signedin:" + signedIn);
+      } else {
+        setAuthenticated(false);
       }
     };
     verifyCookie();
-  }, [cookies]);
+  }, [cookies, user, authenticated]);
 
   return (
     <AuthContext.Provider value={{ authenticated, setAuthenticated, user }}>

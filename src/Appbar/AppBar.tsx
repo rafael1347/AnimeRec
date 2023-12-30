@@ -20,7 +20,7 @@ export default function NavBar(props: navbarProps) {
 
   const Logout = () => {
     setAuthenticated(false);
-    removeCookie("token", { path: "/" });
+    removeCookie("token", {});
     navigate("/login");
   };
 
