@@ -1,42 +1,70 @@
-import { Box, Stack, Tooltip, Typography } from "@mui/material";
+import {
+  SentimentDissatisfiedOutlined,
+  SentimentSatisfiedAlt,
+} from "@mui/icons-material";
+import { Box, Chip, Tooltip, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-interface AnimeCardProps {
+export interface AnimeCardProps {
   title: string;
   id?: string | number;
   imgSrc?: string;
+  score?: string;
+  genre?: any[];
+  episodes?: string;
 }
 export const AnimeCard = (props: AnimeCardProps) => {
-  const { title, imgSrc, id } = props;
-  //console.log(props);
+  const { title, imgSrc, id, score, genre, episodes } = props;
+
   const navigate = useNavigate();
 
-  const CustomToolTip = () => {
-    <Box>
-      <Typography>{title}</Typography>
-    </Box>;
-  };
   return (
     <Tooltip
       placement="right"
+      componentsProps={{
+        tooltip: {
+          sx: {
+            bgcolor: "common.white",
+            "& .MuiTooltip-arrow": {
+              color: "common.white",
+            },
+          },
+        },
+      }}
       title={
         <Box>
-          <Typography>{title}</Typography>
+          <Typography color={"black"}>{title}</Typography>
+          <Box display={"flex"} flexDirection={"row"}>
+            {Number(score) > 6.9 ? (
+              <SentimentSatisfiedAlt sx={{ color: "green" }} />
+            ) : (
+              <SentimentDissatisfiedOutlined sx={{ color: "red" }} />
+            )}
+            <Typography color={"black"} ml={"10px"}>
+              {score} / 10
+            </Typography>
+          </Box>
+
+          {genre?.map((genre, key) => <Chip key={key} label={genre.name} />)}
         </Box>
       }
       arrow
     >
-      <Box>
-        <Box height={"75%"}>
+      <Box height={"100%"}>
+        <Box height={"90%"}>
           <img
             src={imgSrc}
             loading="lazy"
+            height={"100%"}
+            width={"100%"}
             style={{ borderRadius: "5px" }}
             onClick={() => navigate(`Anime/${id}/${title}`)}
           />
         </Box>
         <Box>
-          <Typography>{title}</Typography>
+          <Typography noWrap color={"100 115 128"}>
+            {title}
+          </Typography>
         </Box>
       </Box>
     </Tooltip>

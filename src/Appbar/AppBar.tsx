@@ -75,6 +75,17 @@ export default function NavBar(props: navbarProps) {
             </>
           ) : (
             <>
+              <Button onClick={() => navigate("/")}>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+                  color={"white"}
+                >
+                  Search
+                </Typography>
+              </Button>
               <Button onClick={() => navigate("/login")}>
                 <Typography
                   variant="h6"

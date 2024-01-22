@@ -154,11 +154,17 @@ export const AnimeOverview = () => {
               Episodes
             </Typography>
             <Typography pb={"14px"}>{animeDetails?.episodes}</Typography>
-            <Typography pb={"5px"}>Episode Duration</Typography>
+            <Typography color={"#5C728A"} pb={"5px"}>
+              Episode Duration
+            </Typography>
             <Typography pb={"14px"}>{animeDetails?.episodeDuration}</Typography>
-            <Typography pb={"5px"}>Status</Typography>
+            <Typography color={"#5C728A"} pb={"5px"}>
+              Status
+            </Typography>
             <Typography pb={"14px"}>{animeDetails?.status}</Typography>
-            <Typography pb={"5px"}>Average Score</Typography>
+            <Typography color={"#5C728A"} pb={"5px"}>
+              Average Score
+            </Typography>
             <Typography pb={"14px"}>{animeDetails?.score}</Typography>
           </Box>
         </Box>

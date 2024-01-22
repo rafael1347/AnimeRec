@@ -92,6 +92,7 @@ export function HomePage() {
       height={"100%"}
     >
       <NavBar />
+
       <Stack direction={"row"} spacing={1} pr={24} pl={24}>
         <Box width={"20%"}>
           <Typography>Search</Typography>
@@ -182,6 +183,8 @@ export function HomePage() {
                 title={anime.title}
                 imgSrc={anime.images.jpg.image_url}
                 id={anime.mal_id}
+                genre={anime.genres}
+                score={anime.score}
               />
             </Grid>
           ))}

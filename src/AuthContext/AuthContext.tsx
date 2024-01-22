@@ -21,8 +21,7 @@ const AuthProvider = ({ children }: Props) => {
   );
   const [user, setUser] = useState(initialValue.user);
   const [cookies] = useCookies(["token"]);
-  console.log("AuthContext: " + user);
-  console.log("AuthContextCookie:", cookies.token);
+
   useEffect(() => {
     const verifyCookie = async () => {
       const data = await fetch("https://animerec-api.onrender.com/me", {
