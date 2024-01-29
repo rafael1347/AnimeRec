@@ -1,53 +1,76 @@
-# Getting Started
+# Anime Watchlist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-To Login utilize testUsers: {user:rafael, password:test123}, {user:julie, password:test123}, or create your own user in the signup page!
+Welcome to Anime Watchlist, a MERN (MongoDB, Express, React, Node.js) stack project that allows users to create accounts, log in, and manage their anime watchlists. Explore and add your favorite animes with ease! This project is currently hosted at https://animerec-vv3i.onrender.com/ . Please note that the backend service is inconsistent due to onrenders' free tier plan so logining in might not work automatically.
 
-## Available Scripts FrontEnd
+## Description
 
-In the project directory, you can run:
+Anime Watchlist is a web application designed to simplify the process of managing your anime watchlist. Users can create accounts, log in, and search for animes to add to their personalized watchlists. The application provides an overview of each anime series, making it convenient for users to track their progress and discover new titles.
 
-### `npm start`
+## Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User account creation and authentication
+Seamless search functionality for anime series
+Easy addition of animes to personalized watchlists
+Detailed information view for each anime
+Reference: MongoDB, Express, React, Node.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Visuals
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run Anime Watchlist locally, follow these steps:
 
-### `npm run build`
+Clone the repository.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Replace all api fetches with https://localhost:5000 or whatever endpoint your backend will be.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to the project directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies using the package manager ( npm install).
+Run Frontend (npm start)
+Set up the MongoDB database.
+Navigate to backend folder and Run the server (nodemon server).
+Access the application in your web browser.
+Requirements:
 
-### `npm run eject`
+Node.js
+MongoDB
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### MongoDB structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The MongoDB structure utlized is: Two collections, Anime and Users.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Reference data model was utilized instead of the traditional embeded data model due to a couple of factors: scalability, query optimzition, query readablility. Especially since future plans of anime user statistics (how many people have added an anime to a watchlist), will be implemented eventually leading to the decision of a reference model.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Usage
 
-## Available Scripts Backend
+Create an account or log in.
+Search for your favorite anime series.
+Add animes to your watchlist.
+Explore detailed information for each anime.
+Support
+For help or inquiries, please open an issue on the issue tracker.
 
-### `nodemon server`
+## Roadmap
 
-First CD into backend directory. Execute this command to spin up the Node.js server. This is required to be able to fetch Users and Userdata from MongoDB.
+Implement user profile customization.
+Integrate social sharing features for anime recommendations.
+Contributing
+We welcome contributions! If you'd like to contribute to Anime Watchlist, please follow our contribution guidelines.
 
-## Learn More
+Authors and Acknowledgment
+A special thanks to all contributors who have helped improve Anime Watchlist.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Authors:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Rafael Martinez
+License
+This project is licensed under the MIT License.
+
+## Project Status
+
+Development is ongoing, with plans for continuous improvement. Feel free to contribute or provide feedback. If you are interested in becoming a maintainer, please reach out.
+
+Note: Development pace may vary based on availability.
+
+Enjoy managing your anime watchlist with Anime Watchlist! 🎉
