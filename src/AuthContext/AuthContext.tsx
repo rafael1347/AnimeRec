@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import React from "react";
 
 type Props = {
   children?: React.ReactNode;

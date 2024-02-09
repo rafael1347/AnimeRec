@@ -10,6 +10,7 @@ import NavBar from "../Appbar/AppBar";
 import { useState } from "react";
 import { User } from "../Login/Login";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 export const SignUp = () => {
   const [username, setUsername] = useState<string>();

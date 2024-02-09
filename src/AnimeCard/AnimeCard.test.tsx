@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { AnimeCard, AnimeCardProps } from "./AnimeCard";
 import { BrowserRouter } from "react-router-dom";
+import React from "react";
 
 test("loads and displays greeting", async () => {
   const props: AnimeCardProps = {
@@ -13,5 +14,4 @@ test("loads and displays greeting", async () => {
       <AnimeCard {...props} />
     </BrowserRouter>,
   );
-  screen.debug();
 });
