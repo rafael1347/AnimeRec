@@ -3,6 +3,7 @@ import {
   SentimentSatisfiedAlt,
 } from "@mui/icons-material";
 import { Box, Chip, Tooltip, Typography } from "@mui/material";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export interface AnimeCardProps {
@@ -14,7 +15,7 @@ export interface AnimeCardProps {
   episodes?: string;
 }
 export const AnimeCard = (props: AnimeCardProps) => {
-  const { title, imgSrc, id, score, genre, episodes } = props;
+  const { title, imgSrc, id, score, genre } = props;
 
   const navigate = useNavigate();
 
@@ -54,6 +55,7 @@ export const AnimeCard = (props: AnimeCardProps) => {
         <Box height={"90%"}>
           <img
             src={imgSrc}
+            alt={title}
             loading="lazy"
             height={"100%"}
             width={"100%"}

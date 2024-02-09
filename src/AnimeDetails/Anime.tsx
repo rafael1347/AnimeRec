@@ -2,9 +2,9 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import NavBar from "../Appbar/AppBar";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
-import { useCookies } from "react-cookie";
 import { AuthContext } from "../AuthContext/AuthContext";
 import { Footer } from "../Appbar/Footer";
+import React from "react";
 
 export type Anime = {
   title: string;
@@ -46,8 +46,6 @@ export const AnimeOverview = () => {
       const season = data.data.season;
       const year = data.data.year;
       const trailer = data.data.trailer;
-
-      console.log(data);
 
       const newAnime: Anime = {
         title,
@@ -107,7 +105,7 @@ export const AnimeOverview = () => {
     postData("https://animerec-api.onrender.com/anime/add", payload).then(
       (data) => {
         console.log(data); // JSON data parsed by `data.json()` call
-      },
+      }
     );
   };
 
@@ -122,7 +120,11 @@ export const AnimeOverview = () => {
         sx={{ backgroundColor: "white" }}
       >
         <Box>
-          <img src={animeDetails?.imgSrc} style={{ borderRadius: "5px" }} />
+          <img
+            alt={animeDetails?.title}
+            src={animeDetails?.imgSrc}
+            style={{ borderRadius: "5px" }}
+          />
           <Button
             onClick={handleClick}
             sx={{
