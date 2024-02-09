@@ -1,0 +1,10 @@
+version: "4.15.0"
+
+services:
+  app:
+    container_name: anime
+    image: anime-image
+    build: 
+      context: .
+    ports:
+      - 8080:80
