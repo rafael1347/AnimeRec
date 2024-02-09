@@ -40,7 +40,7 @@ export function HomePage() {
       | typeof yearOptions
       | typeof seasonOptions
       | typeof formatOptions
-    >
+    >,
   ) => {
     const {
       target: { value },
@@ -57,7 +57,7 @@ export function HomePage() {
     } else {
       setGenresOptions(
         // On autofill we get a stringified value.
-        typeof value === "string" ? value.split(",") : value
+        typeof value === "string" ? value.split(",") : value,
       );
     }
   };
@@ -77,7 +77,7 @@ export function HomePage() {
       const sendRequest = setTimeout(() => {
         api(
           `https://api.jikan.moe/v4/anime?q=${query}&sfw&limit=9${formatFilter}
-          `
+          `,
         );
       }, 200);
       return () => clearTimeout(sendRequest);
@@ -92,7 +92,19 @@ export function HomePage() {
       height={"100%"}
     >
       <NavBar />
-
+      <Box pl={"25px"}>
+        <Box
+          maxWidth={"1100px"}
+          width={"100%"}
+          display={"flex"}
+          justifyContent={"center"}
+          sx={{ backgroundColor: "#0a1625", marginLeft: "100px" }}
+        >
+          <Typography color={"white"}>
+            The Next Generation Anime-Platform
+          </Typography>
+        </Box>
+      </Box>
       <Stack direction={"row"} spacing={1} pr={24} pl={24}>
         <Box width={"20%"}>
           <Typography>Search</Typography>

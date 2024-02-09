@@ -107,7 +107,7 @@ export const AnimeOverview = () => {
     postData("https://animerec-api.onrender.com/anime/add", payload).then(
       (data) => {
         console.log(data); // JSON data parsed by `data.json()` call
-      }
+      },
     );
   };
 
