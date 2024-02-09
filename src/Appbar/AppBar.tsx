@@ -7,14 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { AuthContext } from "../AuthContext/AuthContext";
 import { useContext } from "react";
+import React from "react";
 
-interface navbarProps {
-  loggedIn?: true;
-  onLogout?: () => void;
-}
-
-export default function NavBar(props: navbarProps) {
-  const { authenticated, setAuthenticated, user } = useContext(AuthContext);
+export default function NavBar() {
+  const { authenticated, setAuthenticated } = useContext(AuthContext);
   const [cookies, removeCookie] = useCookies(["token"]);
   const navigate = useNavigate();
 
