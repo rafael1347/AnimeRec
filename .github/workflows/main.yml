@@ -25,3 +25,4 @@ jobs:
         run: npm run fix .
       - name: Prettier
         run: npm prettier --write .
+
