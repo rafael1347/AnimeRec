@@ -49,7 +49,7 @@ export const SignUp = () => {
               navigate("/login");
             }, 100);
           }
-        }
+        },
       );
     }
   };

@@ -17,7 +17,7 @@ const initialValue = {
 const AuthContext = createContext<iAuthContext>(initialValue);
 const AuthProvider = ({ children }: Props) => {
   const [authenticated, setAuthenticated] = useState(
-    initialValue.authenticated
+    initialValue.authenticated,
   );
   const [user, setUser] = useState(initialValue.user);
   const [cookies] = useCookies(["token"]);

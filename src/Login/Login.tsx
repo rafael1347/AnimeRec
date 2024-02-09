@@ -49,7 +49,7 @@ export const Login = () => {
 
         const data = await postData(
           "https://animerec-api.onrender.com/login",
-          newUser
+          newUser,
         );
         const { success, message } = data;
         if (success) {

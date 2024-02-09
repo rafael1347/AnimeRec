@@ -16,7 +16,7 @@ app.use(
     origin: ["https://animerec-vv3i.onrender.com", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  })
+  }),
 );
 app.use(bodyParser.json());
 

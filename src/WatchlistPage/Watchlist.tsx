@@ -45,7 +45,7 @@ export const Watchlist = () => {
       (data) => {
         fetchAnime();
         console.log(data); // JSON data parsed by `data.json()` call
-      }
+      },
     );
   };
 

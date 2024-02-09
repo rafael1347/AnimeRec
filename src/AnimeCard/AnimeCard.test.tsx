@@ -11,7 +11,7 @@ test("loads and displays greeting", async () => {
   render(
     <BrowserRouter>
       <AnimeCard {...props} />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
   screen.debug();
 });

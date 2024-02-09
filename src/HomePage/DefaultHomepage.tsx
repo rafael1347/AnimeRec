@@ -59,7 +59,7 @@ export const DefaultHomepage = () => {
           height={desktop ? "317px" : undefined}
         >
           <Skeleton variant="rectangular" width="100%" height={"100%"} />
-        </Grid>
+        </Grid>,
       );
     }
 
