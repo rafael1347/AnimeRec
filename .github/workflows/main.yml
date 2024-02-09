@@ -1,4 +1,4 @@
-name: Demo GitHub Actions
+name: Demo
 on:
   push:
     branches: [main]
